@@ -4,7 +4,10 @@
   "description": "mini map projection of a dom element which allows clicking to scroll to a given region",
   "version": "0.0.1",
   "keywords": [],
-  "dependencies": {},
+  "dependencies": {
+    "component/jquery": "*",
+    "shaunxcode/bling": "*"
+  },
   "development": {},
   "scripts": [
     "index.js"
