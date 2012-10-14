@@ -1,5 +1,5 @@
-$ = require "jquery"
-bling = require "bling"
+$ = require "component-jquery"
+bling = require "component-bling"
 
 class CartographicSurface
     constructor: (options) ->
