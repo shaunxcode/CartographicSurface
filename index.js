@@ -6,8 +6,6 @@
 
   bling = require("bling");
 
-  module.exports = CartographicSurface;
-
   CartographicSurface = (function() {
 
     function CartographicSurface(options) {
@@ -103,5 +101,7 @@
     return CartographicSurface;
 
   })();
+
+  module.exports = CartographicSurface;
 
 }).call(this);

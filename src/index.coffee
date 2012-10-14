@@ -1,8 +1,6 @@
 $ = require "jquery"
 bling = require "bling"
 
-module.exports = CartographicSurface
-
 class CartographicSurface
     constructor: (options) ->
         @surface = options.surface
@@ -81,3 +79,4 @@ class CartographicSurface
 
         this
 
+module.exports = CartographicSurface
