@@ -2,9 +2,9 @@
 (function() {
   var $, CartographicSurface, bling;
 
-  $ = require("component-jquery");
+  $ = require("jquery");
 
-  bling = require("component-bling");
+  bling = require("shaunxcode-bling");
 
   CartographicSurface = (function() {
 
