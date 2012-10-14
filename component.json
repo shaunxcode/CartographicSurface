@@ -5,7 +5,7 @@
   "version": "0.0.1",
   "keywords": [],
   "dependencies": {
-    "component/jquery": "*",
+    "component/jquery": "1.8.2",
     "shaunxcode/bling": "*"
   },
   "development": {},
