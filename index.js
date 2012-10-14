@@ -4,7 +4,7 @@
 
   $ = require("jquery");
 
-  bling = require("shaunxcode-bling");
+  bling = require("bling");
 
   CartographicSurface = (function() {
 
