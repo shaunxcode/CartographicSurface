@@ -57,7 +57,7 @@ class CartographicSurface
         self = this
         $("#{@surface} #{@selector}").each (i, el) =>
             _$el = $(el)
-            id = $el.attr "id"
+            id = $_el.attr "id"
             if not @nodes[id]?
                 @nodes[id] = (bling ".node").appendTo @nodesEl
 
@@ -68,7 +68,7 @@ class CartographicSurface
                 _$el.on "drag.CartographicSurface", -> positionNode()
                 _$el.on append: -> positionNode()
                 _$el.data "CartographicSurfaceNode", @nodes[id]
-                
+
             positionNode = ->
                 pos = _$el.offset()
                 self.nodes[id].css
