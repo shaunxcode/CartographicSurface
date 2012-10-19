@@ -57,7 +57,7 @@ class CartographicSurface
         self = this
         $("#{@surface} #{@selector}").each (i, el) =>
             _$el = $(el)
-            id = $_el.attr "id"
+            id = _$el.attr "id"
             if not @nodes[id]?
                 @nodes[id] = (bling ".node").appendTo @nodesEl
 

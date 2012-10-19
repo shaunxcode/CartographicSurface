@@ -65,7 +65,7 @@
       $("" + this.surface + " " + this.selector).each(function(i, el) {
         var id, positionNode, _$el;
         _$el = $(el);
-        id = $_el.attr("id");
+        id = _$el.attr("id");
         if (!(_this.nodes[id] != null)) {
           _this.nodes[id] = (bling(".node")).appendTo(_this.nodesEl);
           _$el.on("remove.CartographicSurface", function() {
