@@ -57,19 +57,21 @@ class CartographicSurface
         self = this
         $("#{@surface} #{@selector}").each (i, el) =>
             _$el = $(el)
-            if not @nodes[i]?
-                @nodes[i] = (bling ".node").appendTo @nodesEl
+            id = $el.attr "id"
+            if not @nodes[id]?
+                @nodes[id] = (bling ".node").appendTo @nodesEl
 
                 _$el.on "remove.CartographicSurface", -> 
-                    self.nodes[i].remove()
-                    delete self.nodes[i]
+                    self.nodes[id].remove()
+                    delete self.nodes[id]
                 _$el.on "resize.CartographicSurface", -> positionNode()
                 _$el.on "drag.CartographicSurface", -> positionNode()
                 _$el.on append: -> positionNode()
-
+                _$el.data "CartographicSurfaceNode", @nodes[id]
+                
             positionNode = ->
                 pos = _$el.offset()
-                self.nodes[i].css
+                self.nodes[id].css
                     left: pos.left * self.scale
                     top: pos.top * self.scale
                     width: _$el.width() * self.scale

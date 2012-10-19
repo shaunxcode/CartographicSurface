@@ -63,13 +63,14 @@
         _this = this;
       self = this;
       $("" + this.surface + " " + this.selector).each(function(i, el) {
-        var positionNode, _$el;
+        var id, positionNode, _$el;
         _$el = $(el);
-        if (!(_this.nodes[i] != null)) {
-          _this.nodes[i] = (bling(".node")).appendTo(_this.nodesEl);
+        id = $el.attr("id");
+        if (!(_this.nodes[id] != null)) {
+          _this.nodes[id] = (bling(".node")).appendTo(_this.nodesEl);
           _$el.on("remove.CartographicSurface", function() {
-            self.nodes[i].remove();
-            return delete self.nodes[i];
+            self.nodes[id].remove();
+            return delete self.nodes[id];
           });
           _$el.on("resize.CartographicSurface", function() {
             return positionNode();
@@ -82,11 +83,12 @@
               return positionNode();
             }
           });
+          _$el.data("CartographicSurfaceNode", _this.nodes[id]);
         }
         positionNode = function() {
           var pos;
           pos = _$el.offset();
-          return self.nodes[i].css({
+          return self.nodes[id].css({
             left: pos.left * self.scale,
             top: pos.top * self.scale,
             width: _$el.width() * self.scale,
