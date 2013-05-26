@@ -1,4 +1,3 @@
-$ = require "jquery"
 bling = require "bling"
 
 class CartographicSurface
