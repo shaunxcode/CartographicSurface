@@ -36,15 +36,17 @@ class CartographicSurface
 
         @$el.click (e) =>
             @$win
-                .scrollLeft((e.clientX - (@$el.offset().left - @$win.scrollLeft())) * @scaleUp)
-                .scrollTop((e.clientY - (@$el.offset().top - @$win.scrollTop())) * @scaleUp)
+                .scrollLeft((e.clientX - (@$el.offset().left - @$win.scrollLeft()) - (@viewPortWidth / 2)) * @scaleUp)
+                .scrollTop((e.clientY - (@$el.offset().top - @$win.scrollTop()) - (@viewPortHeight / 2)) * @scaleUp)
+
+        $(window).resize()
 
         this
 
     drawViewPort: ->
         @viewPortEl.css
-            width: @$win.width() * @scale
-            height: @$win.height() * @scale
+            width: @viewPortWidth  = @$win.width() * @scale
+            height: @viewPortHeight = @$win.height() * @scale
             left: @$win.scrollLeft() * @scale 
             top: @$win.scrollTop() * @scale
             
@@ -55,7 +57,7 @@ class CartographicSurface
     drawNodes: ->
         self = this
         $("#{@surface} #{@selector}").each (i, el) =>
-            _$el = $(el)
+            _$el = $(el).uniqueId()
             id = _$el.attr "id"
             if not @nodes[id]?
                 @nodes[id] = (bling ".node").appendTo @nodesEl

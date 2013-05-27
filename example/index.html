@@ -4,19 +4,31 @@
 <title>cartographic surface example</title>
 <link rel="stylesheet" type="text/css" href="../build/build.css" />
 <style>
-h2 { position: absolute; left: 3000px; top: 3000px; }
+body { height: 4000px; width: 4000px; } 
+h1 { width: 200px; height: 150px; background: red; color: white; }
+
+h2 { width: 200px; height: 150px; background: blue; color: white; position: absolute; left: 3000px; top: 3000px; }
+.random { position: absolute; left: 50px; top: 200px; background: #ff00ff; width: 50px; height: 50px;}
+
 </style> 
 </head>
 <body>
 <h1 class="widget">Hi</h1>
 <h2 class="widget">hellooo</h2>
+<div class="random widget">random</div>
 <script src="../build/build.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
 <script>
 CartographicSurface = require("CartographicSurface");
-map = new CartographicSurface({surface: "body", selector: ".widget", scale: 0.08}); 
-map.render().$el.appendTo("body");
+$(function(){
+	map = new CartographicSurface({
+		surface: "body", 
+		selector: ".widget", 
+		scale: 0.08}); 
+
+	map.render().$el.appendTo("body");
+});
 
 </script>
 </body>
